@@ -1,0 +1,5 @@
+{
+ "entry": "v31.0.4: Fixed reply handler returning \"You too!\" when the waiter says \"Enjoy your meal.\" Won't fix: 3 a.m. replay of the incident, nightly until 2047.",
+ "entrypoint": "main.ts",
+ "main_ts": "// Writes one patch note for a bug in real life to /output/entry.txt.\nimport { mkdirSync, writeFileSync } from \"node:fs\";\nimport { join } from \"node:path\";\n\nconst ENTRY =\n  'v31.0.4: Fixed reply handler returning \"You too!\" when the waiter says \"Enjoy your meal.\" ' +\n  \"Won't fix: 3 a.m. replay of the incident, nightly until 2047.\";\n\nconst outDir = process.env.OUTPUT_DIR ?? \"/output\";\nmkdirSync(outDir, { recursive: true });\nwriteFileSync(join(outDir, \"entry.txt\"), ENTRY, \"utf8\");\n"
+}
